@@ -36,7 +36,10 @@ def funcion_lista_esta_ordenada(lista_ordenada):
 
 def funcion_ordenamiento(lista_ordenada):
     global posicion, lista_inicial
-    print("\n\nordenando lista")
+    print(Fore.GREEN + "\n\nOrdenando lista" + Style.RESET_ALL)
+    print(Fore.GREEN + f"Lista inicial: {lista_inicial}" + Style.RESET_ALL) 
+
+    print(Fore.YELLOW + f"\nOrdenando lista: " + Style.RESET_ALL + f"{lista_ordenada}")
 
     if posicion == len(lista_ordenada)-1:        #si la posicion es igual al largo de la lista menos 1, se vuelve a 0 para reiniciar el ordenamiento
         posicion = 0
@@ -45,30 +48,32 @@ def funcion_ordenamiento(lista_ordenada):
         numero_triangulado = lista_ordenada[posicion]        #si es asi, se intercambian los valores de lugar, se utiliza una tercer variable para triangular
         lista_ordenada[posicion] = lista_ordenada[posicion+1]
         lista_ordenada[posicion+1] = numero_triangulado
+        
 
-    print(f"Lista inicial: {lista_inicial}")
+
+    print(f"\nNumeros comparados en esta iteracion: " + Fore.RED + f"{lista_ordenada[posicion+1]} y {lista_ordenada[posicion]}" + Style.RESET_ALL)
+    print(f"Se ordenan los numeros {lista_ordenada[posicion+1]} y {lista_ordenada[posicion]} porque " + Fore.RED + f"{lista_ordenada[posicion]} es menor a {lista_ordenada[posicion+1]}" + Style.RESET_ALL)
     print(f"\nLista ordenada al momento: ")
-    
-    print(f"Numeros comparados en esta iteracion: {lista_ordenada[posicion]} y {lista_ordenada[posicion+1]}")
     print(f"{lista_ordenada}")
 
 
     for numero in lista_ordenada:
         if lista_ordenada[posicion] == numero:
             print("\n")
-            print(Fore.RED + f"{numero} ", end ="" + Style.RESET_ALL)
+            print(Fore.RED + f"{numero} ", end ="")
         elif lista_ordenada[posicion+1] == numero:
             print("\n")
-            print(Fore.RED + f"{numero} ", end ="" + Style.RESET_ALL)
+            print(Fore.RED + f"{numero} ", end ="")
         else:
             print("\n")
-            print(f"{numero} ", end ="")
+            print(Style.RESET_ALL + f"{numero} ", end ="")
         for numero in range(numero):
             print("◻ ", end ="")
+    
     posicion += 1           #se sube la posicion en un valor 
 
 
-    input("\n\nPress Enter to continue...")
+    input(Fore.YELLOW +"\n\nPress Enter to continue..." + Style.RESET_ALL)
     os.system('cls')
     
     funcion_lista_esta_ordenada(lista_ordenada)
