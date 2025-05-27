@@ -39,6 +39,7 @@ def funcion_lista_esta_ordenada(lista_ordenada):
             for numero in range(numero):
                 print(Fore.RED + "◻ " + Style.RESET_ALL, end = "")
         print(Fore.YELLOW + f"\n\nCantidad de iteraciones realizadas: {pasos}" + Style.RESET_ALL)
+        input(Fore.YELLOW + "\n\nPresione Enter para salir del programa..." + Style.RESET_ALL)
     
 
     else:
