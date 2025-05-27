@@ -3,9 +3,10 @@ import os
 from colorama import init, Fore, Back, Style
 init()
 
+
 posicion = 0
-tamaño_lista = 6        #Tamaño de lista, lista pequeña para demostracion del metodo
-lista = random.sample(range(1, 7), tamaño_lista)    # Lista de números únicos
+tamaño_lista = int(input("Ingrese un numero entero para la cantidad de numeros en la lista aleatoria"))       #Tamaño de lista, lista pequeña para demostracion del metodo
+lista = random.sample(range(1, tamaño_lista+1), tamaño_lista)    # Lista de números únicos
 lista_inicial = list(lista)     #guardamos la lista inicial
 lista_ordenada = list(lista)    #vamos a utilizar esta lista para ordernarla
 lista_ordenada_chequeo = sorted(lista)      #lista ordenada por python para chequear que hayamos ordenado correctamente
@@ -33,6 +34,7 @@ def funcion_lista_esta_ordenada(lista_ordenada):
     global posicion, tamaño_lista, lista_ordenada_chequeo
     
     if lista_ordenada == lista_ordenada_chequeo:        #se chequea que la lista este ordenada
+    #if all(min(lista_ordenada) <= lista_ordenada[])
         print(Fore.GREEN + f"Lista inicial: {lista_inicial}" + Style.RESET_ALL) 
 
         print(Fore.YELLOW + "\nLISTA ORDENADA" + Style.RESET_ALL)
