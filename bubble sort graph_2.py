@@ -48,10 +48,17 @@ def funcion_ordenamiento(lista_ordenada):
 
     print(f"Lista inicial: {lista_inicial}")
     print(f"\nLista ordenada al momento: ")
+    
+    print(f"Numeros comparados en esta iteracion: {lista_ordenada[posicion]} y {lista_ordenada[posicion+1]}")
     print(f"{lista_ordenada}")
 
+
     for numero in lista_ordenada:
-        if numero == posicion:
+        if lista_ordenada[posicion] == numero:
+            print("\n")
+            print(Fore.RED + f"{numero} ", end ="" + Style.RESET_ALL)
+        elif lista_ordenada[posicion+1] == numero:
+            print("\n")
             print(Fore.RED + f"{numero} ", end ="" + Style.RESET_ALL)
         else:
             print("\n")
