@@ -5,7 +5,8 @@ init()
 
 
 posicion = 0
-tamaño_lista = int(input("Ingrese un numero entero para la cantidad de numeros en la lista aleatoria"))       #Tamaño de lista, lista pequeña para demostracion del metodo
+print(Fore.GREEN + "Programa que muestra como se ordena con Bubble Sorting una lista al azar de numeros, paso a paso" + Style.RESET_ALL)
+tamaño_lista = int(input("Ingrese un numero entero para la cantidad de numeros en la lista aleatoria:\n"))       #Tamaño de lista, lista pequeña para demostracion del metodo
 lista = random.sample(range(1, tamaño_lista+1), tamaño_lista)    # Lista de números únicos
 lista_inicial = list(lista)     #guardamos la lista inicial
 lista_ordenada = list(lista)    #vamos a utilizar esta lista para ordernarla
@@ -14,7 +15,7 @@ pasos = 0
 
 
 #inicio del programa titulo
-print(Fore.GREEN + "Programa que muestra como se ordena con Bubble Sorting una lista al azar de 6 numeros, paso a paso")
+#print(Fore.GREEN + "Programa que muestra como se ordena con Bubble Sorting una lista al azar de 6 numeros, paso a paso")
 print(Fore.GREEN + f"lista inicial: {lista}" + Style.RESET_ALL)
 
 #ciclo for que imprime el grafico de la lista

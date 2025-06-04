@@ -1,6 +1,6 @@
 import time
 import random
-from colorama import init, Fore, Back, Style
+from colorama import  Fore, Back, Style
 import os
 
 lista_esta_ordenada = False
