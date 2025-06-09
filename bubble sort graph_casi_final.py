@@ -14,7 +14,6 @@ def imprimir_lista_inicial(lista):
             print("▢ ", end ="")    #imprime un cuadrado al lado de cada numero de la lista
 
 #funcion que imprime los pasos mientras ordenamos
-#marca en rojo los numeros que se estan comparando
 def imprimir_lista_pasos_intermedios(lista_ordenada):
     global posicion
     for numero in lista_ordenada:
@@ -36,7 +35,6 @@ def funcion_lista_esta_ordenada(lista_ordenada):
     global posicion, tamaño_lista, lista_ordenada_chequeo
     
     if lista_ordenada == lista_ordenada_chequeo:        #se chequea que la lista este ordenada
-
         print(Fore.GREEN + f"Lista inicial: {lista_inicial}" + Style.RESET_ALL) 
         print(Fore.YELLOW + "\nLISTA ORDENADA" + Style.RESET_ALL)
         print(Fore.YELLOW + f"{lista_ordenada}" + Style.RESET_ALL)
@@ -69,17 +67,10 @@ def funcion_ordenamiento(lista_ordenada):
     if posicion == len(lista_ordenada)-1:        
         posicion = 0
 
-    numeros_colorama = [lista_ordenada[posicion], lista_ordenada[posicion+1]]       #guarda las dos posiciones para colorear con colorama
-    #imprime la lista como se encuentra ordenada en el momento, resaltando en rojo los dos numeros que estamos comparando
-    for numero in lista_ordenada:
-        if numero in numeros_colorama:      #verifica que se impriman en rojo los numeros que estamos comparando
-            print(Back.WHITE + Fore.RED + f" {str(numero)} " + Style.RESET_ALL, end = "")
-        else:
-            print(Back.WHITE + Fore.BLACK + f" {str(numero)} "+ Style.RESET_ALL, end = "") 
-
     #Imprime los dos numeros que se comparan al momento 
     print(f"\nNumeros comparados en esta iteracion: " + Fore.RED + f"{lista_ordenada[posicion]} y {lista_ordenada[posicion+1]}" + Style.RESET_ALL)
     #desicion que verifica si el primer numero que esta siendo comparado es mayor al segundo numero, si lo es se rotan
+    
     if lista_ordenada[posicion] > lista_ordenada[posicion+1]:         #se chequea si la posicion es mayor a la posicion +1
         numero_triangulado = lista_ordenada[posicion]                 #si es asi, se intercambian los valores de lugar, se utiliza una tercer variable para triangular
         lista_ordenada[posicion] = lista_ordenada[posicion+1]
@@ -134,9 +125,9 @@ tamaño_lista = validacion_datos(numero_ingresado)
 #Se crea la lista random
 lista = random.sample(range(1, tamaño_lista+1), tamaño_lista)    
 lista_inicial = list(lista)     #guardamos la lista inicial
-lista_ordenada = list(lista)    #vamos a utilizar esta lista para ordernarla
+lista_ordenada = list(lista)    #vamos a utilizar esta lista para ordenar
 lista_ordenada_chequeo = sorted(lista)      #lista ordenada por python para chequear que hayamos ordenado correctamente
-pasos = 0
+pasos = 0 #contador con los pasos que realiza bubble sort para resolver
 
 #se llama a la funcion que imprime la lista inicial
 imprimir_lista_inicial(lista)

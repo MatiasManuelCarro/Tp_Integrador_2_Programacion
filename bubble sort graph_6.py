@@ -55,27 +55,47 @@ def funcion_lista_esta_ordenada(lista_ordenada):
     else:       #si no esta ordenada se vuelve a llamar a la funcion que ordena
         funcion_ordenamiento(lista_ordenada)
 
-#funcion que ordena la lista
-def funcion_ordenamiento(lista_ordenada):
-    #variable globales que maneja la funcion
-    global posicion, lista_inicial, pasos
 
-    #titulo con lista inicial
+
+#funcion bubble sort
+
+def bubble_sort(arr):
     print(Fore.GREEN + f"Lista inicial: {lista_inicial}" + Style.RESET_ALL) 
     print(Fore.YELLOW + f"\nOrdenando lista: " + Style.RESET_ALL, end = "")
 
+    global pasos
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                print(f"j: {j}")
+                print(f"i: {i}")
+                pasos +=1
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+
+#funcion que ordena la lista
+def funcion_ordenamiento(lista_ordenada):
+    #variable globales que maneja la funcion
+    #global posicion, lista_inicial, pasos
+
+    #titulo con lista inicial
+
+
     #si la posicion es igual al largo de la lista menos 1, se vuelve a 0 para reiniciar el ordenamiento
     #esto reinicia el ordenamiento para recorrer la lista nuevamente
-    if posicion == len(lista_ordenada)-1:        
-        posicion = 0
+    #if posicion == len(lista_ordenada)-1:        
+    #    posicion = 0
 
-    numeros_colorama = [lista_ordenada[posicion], lista_ordenada[posicion+1]]       #guarda las dos posiciones para colorear con colorama
-    #imprime la lista como se encuentra ordenada en el momento, resaltando en rojo los dos numeros que estamos comparando
-    for numero in lista_ordenada:
-        if numero in numeros_colorama:      #verifica que se impriman en rojo los numeros que estamos comparando
-            print(Back.WHITE + Fore.RED + f" {str(numero)} " + Style.RESET_ALL, end = "")
-        else:
-            print(Back.WHITE + Fore.BLACK + f" {str(numero)} "+ Style.RESET_ALL, end = "") 
+
+#numeros_colorama = [lista_ordenada[posicion], lista_ordenada[posicion+1]]       #guarda las dos posiciones para colorear con colorama
+#    #imprime la lista como se encuentra ordenada en el momento, resaltando en rojo los dos numeros que estamos comparando
+#    for numero in lista_ordenada:
+#        if numero in numeros_colorama:      #verifica que se impriman en rojo los numeros que estamos comparando
+#            print(Back.WHITE + Fore.RED + f" {str(numero)} " + Style.RESET_ALL, end = "")
+#        else:
+#            print(Back.WHITE + Fore.BLACK + f" {str(numero)} "+ Style.RESET_ALL, end = "") 
+
 
     #Imprime los dos numeros que se comparan al momento 
     print(f"\nNumeros comparados en esta iteracion: " + Fore.RED + f"{lista_ordenada[posicion]} y {lista_ordenada[posicion+1]}" + Style.RESET_ALL)
@@ -146,5 +166,7 @@ input(Fore.YELLOW + "\n\nPresione Enter para comenzar a ordernar la lista..." + 
 #limpia la pantalla para que el programa sea mas facil de entender
 os.system('cls')
 
+bubble_sort(lista)
+
 #inicio del ordenamiento, se llama a la funcion que verifica si la lista esta ordenada
-funcion_ordenamiento(lista_ordenada)
+#funcion_ordenamiento(lista_ordenada)

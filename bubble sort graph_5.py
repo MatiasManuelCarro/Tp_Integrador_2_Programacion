@@ -111,20 +111,20 @@ def validacion_datos(numero_ingresado): #Valida que el numero ingresado sea corr
     while True: #Se repite el loop hasta que la funcion retorne el numero
         try: #intenta pasar el ingreso a un integer
             numero = int(numero_ingresado) #si es integer, se guarda en la variable numero
-            if numero >= 3 and numero <= 10: #verifica que el entero sea positivo y menoro igual a 20 si no lo es, vuelve a pedir ingreso de datos
+            if numero >= 3 and numero <= 20: #verifica que el entero sea positivo y menoro igual a 20 si no lo es, vuelve a pedir ingreso de datos
                 return numero #si es entero, positivo, y menor a 999, devuelve el numero
             else:
                 print("\nDatos ingresados incorrectos")
-                numero_ingresado = input("Ingrese otro numero, recuerde que tiene que ser un entero positivo entre 3 y 10:\n") #volvemos a pedir ingreso
+                numero_ingresado = input("Ingrese otro numero, recuerde que tiene que ser un entero positivo entre 3 y 20:\n") #volvemos a pedir ingreso
         except ValueError: #en caso de error, el ingreso no era correcto. Tenia otros caracteres o era decimal
             print("\nDatos ingresados incorrectos")
-            numero_ingresado = input("Ingrese otro numero, recuerde que tiene que ser un entero positivo entre 3 y 10:\n") #volvemos a pedir ingreso
+            numero_ingresado = input("Ingrese otro numero, recuerde que tiene que ser un entero positivo entre 3 y 20:\n") #volvemos a pedir ingreso
 
 
 #inicio del programa titulo
 print(Fore.GREEN + "\nPrograma que muestra como se ordena con Bubble Sorting una lista al azar, paso a paso" + Style.RESET_ALL)
 print("\nPara poder demostrar el ejemplo, ingrese un numero para elegir el total de elementos de la lista aleatoria") 
-print("Por favor un numero entre 3 y 10 ya que mas de 10 el programa seria demasiado largo para su demostracion practica")
+print("Por favor un numero entre 3 y 20 ya que mas de 20 el programa seria demasiado largo para su demostracion practica")
 #Se solicita ingreso al usuario
 numero_ingresado = input("Ingrese un numero:\n")       
 
